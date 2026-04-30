@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{64DCA852-AFB6-4F98-8772-CEDA3E29321D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiProcessamento", "ApiProcessamento\ApiProcessamento.csproj", "{45C43E04-EB4C-40EF-B97A-D9510E5B6F4B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{64DCA852-AFB6-4F98-8772-CEDA3E29321D} = {64DCA852-AFB6-4F98-8772-CEDA3E29321D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensorSimulator", "SensorSimulator\SensorSimulator.csproj", "{055549A1-8117-4BEC-9E39-D1FB74A52C73}"
+	ProjectSection(ProjectDependencies) = postProject
+		{64DCA852-AFB6-4F98-8772-CEDA3E29321D} = {64DCA852-AFB6-4F98-8772-CEDA3E29321D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensorInterface", "SensorInterface\SensorInterface.csproj", "{85D789DB-FB08-429E-9765-445515B0F9F8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{64DCA852-AFB6-4F98-8772-CEDA3E29321D} = {64DCA852-AFB6-4F98-8772-CEDA3E29321D}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64DCA852-AFB6-4F98-8772-CEDA3E29321D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64DCA852-AFB6-4F98-8772-CEDA3E29321D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64DCA852-AFB6-4F98-8772-CEDA3E29321D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64DCA852-AFB6-4F98-8772-CEDA3E29321D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45C43E04-EB4C-40EF-B97A-D9510E5B6F4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45C43E04-EB4C-40EF-B97A-D9510E5B6F4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45C43E04-EB4C-40EF-B97A-D9510E5B6F4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45C43E04-EB4C-40EF-B97A-D9510E5B6F4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{055549A1-8117-4BEC-9E39-D1FB74A52C73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{055549A1-8117-4BEC-9E39-D1FB74A52C73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{055549A1-8117-4BEC-9E39-D1FB74A52C73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{055549A1-8117-4BEC-9E39-D1FB74A52C73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85D789DB-FB08-429E-9765-445515B0F9F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85D789DB-FB08-429E-9765-445515B0F9F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85D789DB-FB08-429E-9765-445515B0F9F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85D789DB-FB08-429E-9765-445515B0F9F8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1EDA0C29-2A83-44FF-8847-CB1146735E16}
+	EndGlobalSection
+EndGlobal
