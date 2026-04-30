@@ -1,15 +1,29 @@
+using ApiProcessamento.Data;
+using Microsoft.EntityFrameworkCore;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// 1. Configura o Banco de Dados SQLite (O arquivo sensores.db será criado aqui)
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlite("Data Source=sensores.db"));
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+// Configurações do Swagger (Para testar a API no navegador)
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// 2. Garante que o banco de dados seja criado automaticamente ao iniciar
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    dbContext.Database.EnsureCreated();
+}
+
+// Configuração do Pipeline HTTP
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
