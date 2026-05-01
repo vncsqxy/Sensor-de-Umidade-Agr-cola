@@ -1,51 +1,38 @@
-import google.ds_python_interpreter as ds
+SISTEMA DE MONITORAMENTO AGRICOLA
 
-# Código para gerar o conteúdo do README.md profissional
-readme_content = """# 🛰️ Agrotech: Sistema de Monitoramento de Humidade Agrícola
+Sistema desenvolvido em .NET para simulação, processamento e exibição de dados de sensores de umidade agrícola em tempo real.
 
-![.NET](https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
-![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)
-![WPF](https://img.shields.io/badge/WPF-blue?style=for-the-badge)
+ESTRUTURA DO PROJETO
 
-Este projeto é um ecossistema completo de monitorização de dados agrícolas, focado em alta performance de processamento e separação clara de responsabilidades (Separation of Concerns). O sistema simula dispositivos IoT enviando dados de humidade em tempo real para uma API centralizada, que persiste os dados e os distribui para um dashboard administrativo.
+ApiProcessamento: API REST em ASP.NET Core com persistência em banco de dados SQLite via Entity Framework.
 
-## 🏗️ Arquitetura do Sistema
+SensorInterface: Dashboard desktop em WPF estruturado no padrão MVVM para exibição visual dos dados.
 
-O sistema foi desenhado utilizando uma arquitetura modular dividida em 4 camadas principais:
+SensorSimulator: Aplicação Console que atua como hardware IoT, gerando e enviando dados.
 
-1.  **ApiProcessamento (Backend):** * API RESTful desenvolvida em ASP.NET Core.
-    * Utiliza **Entity Framework Core** para abstração da camada de dados.
-    * Persistência em **SQLite** para portabilidade e leveza.
-    * Implementação de Injeção de Dependência nativa.
-2.  **SensorInterface (Frontend):**
-    * Dashboard desenvolvido em **WPF (Windows Presentation Foundation)**.
-    * Implementação rigorosa do padrão **MVVM (Model-View-ViewModel)**.
-    * Data Binding bidirecional para atualização de dados em tempo real.
-3.  **SensorSimulator (Hardware Simulation):**
-    * Aplicação Console que simula o comportamento de sensores físicos.
-    * Comunicação assíncrona via `HttpClient` (JSON payload).
-4.  **Shared (Common Layer):**
-    * Biblioteca de classes contendo o Modelo de Dados (DTOs).
-    * Garante a consistência de tipos e contratos entre o produtor (Simulador), o processador (API) e o consumidor (WPF).
+Shared: Biblioteca compartilhada de modelos e regras de negócio para manter a consistência entre as aplicações.
 
-## 🛠️ Tecnologias e Padrões de Projeto
+TECNOLOGIAS UTILIZADAS
 
-* **Linguagem:** C# (.NET 8.0/6.0)
-* **ORM:** Entity Framework Core
-* **Banco de Dados:** SQLite
-* **Interface:** XAML (WPF)
-* **Padrões:** MVVM, Singleton (HttpClient), Repository Pattern (DbContext).
+Linguagem: C# (.NET)
 
-## 🚀 Como Executar o Projeto
+Banco de Dados: SQLite com Entity Framework Core
 
-Para rodar o ecossistema completo, siga a ordem de inicialização abaixo:
+Interface Visual: WPF com padrão MVVM
 
-### Pré-requisitos
-* Visual Studio 2022 ou VS Code.
-* SDK do .NET Core instalado.
+Documentação da API: Swagger
 
-### Passo 1: Inicializar a API
-A API criará automaticamente o banco de dados `sensores.db` no primeiro arranque.
-```bash
-cd ApiProcessamento
-dotnet run
+COMO EXECUTAR O PROJETO
+
+Abra o terminal do seu computador e execute os projetos na seguinte ordem:
+
+Iniciar o Banco e a API
+Navegue até a pasta "ApiProcessamento" e digite o comando: dotnet run
+
+Iniciar o Dashboard Visual
+Abra um novo terminal, navegue até a pasta "SensorInterface" e digite o comando: dotnet run
+
+Iniciar o Simulador de Sensores
+Abra um terceiro terminal, navegue até a pasta "SensorSimulator" e digite o comando: dotnet run
+
+Desenvolvido por Vinícius como entrega final da SA de Programação C#.
